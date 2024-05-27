@@ -323,16 +323,16 @@ public class SeleniumUtils extends BasePage {
 	}
 
 	/**
-	 * methode Auto suggest : Below is the code to select the Option based on the
+	 * methode Auto suggest : Below is the code to  the Option based on the
 	 * string passed in the Test. We are List as option can be more than one. By
-	 * iterating the list we will select the required option.
+	 * iterating the list we will  the required option.
 	 *
 	 * @param elementWeb
 	 * @param writeText
-	 * @param textToSelect
+	 * @param textTo
 	 * @throws InterruptedException the interrupted exception
 	 */
-	public void autoSuggest(WebElement elementWeb, String writeText, String textToSelect) throws InterruptedException {
+	public void autoSuggest(WebElement elementWeb, String writeText, String textTo) throws InterruptedException {
 		// start input in input field
 		elementWeb.sendKeys(writeText);
 		Thread.sleep(3000);
@@ -341,7 +341,7 @@ public class SeleniumUtils extends BasePage {
 		List<WebElement> options = driver.findElements(By.tagName("li"));
 		// loop through list of inputs an click specific Text + break out the loop
 		for (WebElement option : options) {
-			if (option.getText().equalsIgnoreCase(textToSelect)) {
+			if (option.getText().equalsIgnoreCase(textTo)) {
 				option.click();
 				break;
 			}
@@ -424,20 +424,20 @@ public class SeleniumUtils extends BasePage {
 	}
 
 	/**
-	 * methode Select option with text.
+	 * methode  option with text.
 	 *
-	 * @param textToSelect
+	 * @param textTo
 	 * @param elementWeb
 	 * @param locator
 	 */
-	public void selectOptionWithText(String textToSelect, WebElement elementWeb, By locator) {
+	public void OptionWithText(String textTo, WebElement elementWeb, By locator) {
 		try {
 			WebElement autoOptions = elementWeb;
 
-			List<WebElement> optionsToSelect = autoOptions.findElements(locator);
-			for (WebElement option : optionsToSelect) {
-				if (option.getText().equals(textToSelect)) {
-					log.info("Trying to select: " + textToSelect);
+			List<WebElement> optionsTo = autoOptions.findElements(locator);
+			for (WebElement option : optionsTo) {
+				if (option.getText().equals(textTo)) {
+					log.info("Trying to : " + textTo);
 					option.click();
 					break;
 				}

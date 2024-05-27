@@ -4,8 +4,8 @@ Feature: User Registration
 
   @registerNewUser
   Scenario: je souhaite creer un nouveau compte
+  
     Given Navigate to the url
-    When Verify that home page is visible successfully
     Then Click on Signup Login button
     And Verify message new user signup "New User Signup!" is visibles
     And Enter name "mouna"
@@ -29,7 +29,7 @@ Feature: User Registration
       | Address2      | Les berges de Néroli |
       | Country       | France               |
       | State         | Courbevoie           |
-      | City          | La Defense           |
+      | City          | Tunis                |
       | Zipcode       |                92400 |
       | Mobile Number |           0772187985 |
     And Click Create Account button
